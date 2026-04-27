@@ -236,6 +236,7 @@
     /* ── WHY ── */
     #about { background: var(--bg); }
     .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-left { display: flex; flex-direction: column; }
     .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
     .why-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -257,7 +258,7 @@
       overflow: hidden;
     }
     .stat-item {
-      padding: 28px; text-align: center;
+      padding: 40px 28px; text-align: center;
       background: var(--surface2);
     }
     .stat-item:nth-child(1) { border-radius: 16px 0 0 0; }
@@ -511,7 +512,7 @@
 <section id="about">
   <div class="container">
     <div class="why-grid">
-      <div>
+      <div class="why-left">
         <div class="section-label">О компании</div>
         <h2>Почему выбирают нас</h2>
         <p class="section-desc">Специализируемся на сложных задачах: нестандартные грузы, специфичная номенклатура, жёсткие сроки.</p>
@@ -545,9 +546,10 @@
             <p>Честные цены без скрытых платежей.</p>
           </div>
         </div>
-      </div>
+        </div><!-- why-cards -->
+      </div><!-- why-left -->
       <div>
-        <div class="stats-block">
+        <div class="stats-block" style="width:100%;">
           <div class="stat-item">
             <div class="stat-num">15+</div>
             <div class="stat-label">лет опыта</div>
@@ -564,7 +566,7 @@
             <div class="stat-num">24/7</div>
             <div class="stat-label">поддержка</div>
           </div>
-        </div>
+        </div><!-- stats-block -->
       </div>
     </div>
   </div>
