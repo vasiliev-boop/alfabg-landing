@@ -1,43 +1,757 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Альфа Бизнес Групп - таможенное оформление, грузоперевозки из Китая, ЮВА и Европы. Полный спектр логистических услуг для B2B." />
-    <meta name="theme-color" content="#0f172a" />
-    <link rel="preconnect" href="https://fonts.googleapis.com ">
-    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
-    <title>Альфа Бизнес Групп - Логистические услуги</title>
-    <style>
-      body {
-        background-color: #0f172a;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <script type="module" crossorigin src="./assets/index-vwxmAzTc.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BmoPbj4P.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-       ym(108380116, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/108380116" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alfa Business Group — таможенное оформление, грузоперевозки из Китая, ЮВА и Европы. Полный спектр логистических услуг для B2B." />
+  <title>Альфа Бизнес Групп — Логистические услуги</title>
+ 
+  <!-- Яндекс.Метрика -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(108380116,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108380116" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg:       #0b0f1a;
+      --surface:  #111827;
+      --surface2: #1a2235;
+      --border:   rgba(255,255,255,0.08);
+      --accent:   #e85d04;
+      --accent2:  #c44d00;
+      --text:     #f1f5f9;
+      --muted:    #94a3b8;
+      --dim:      #475569;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+ 
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 0;
+      transition: background .3s, backdrop-filter .3s;
+    }
+    header.scrolled {
+      background: rgba(11,15,26,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .logo img { height: 44px; display: block; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a {
+      color: var(--muted); text-decoration: none; font-weight: 500; font-size: 14px;
+      transition: color .2s; letter-spacing: .02em;
+    }
+    nav a:hover { color: var(--text); }
+    .hdr-contact { display: flex; align-items: center; gap: 20px; }
+    .hdr-phone {
+      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .hdr-phone:hover { color: var(--text); }
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none; border-radius: 8px;
+      padding: 10px 22px; font-family: 'Manrope', sans-serif; font-weight: 600;
+      font-size: 14px; cursor: pointer; transition: background .2s, transform .1s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent2); }
+    .btn-primary:active { transform: scale(.98); }
+    .btn-outline {
+      background: transparent; color: var(--text); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 22px; font-family: 'Manrope', sans-serif;
+      font-weight: 600; font-size: 14px; cursor: pointer; transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--dim); background: var(--surface2); }
+ 
+    /* hamburger */
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 0;
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a, .mobile-nav button {
+      display: block; padding: 14px 24px; color: var(--muted); text-decoration: none;
+      font-weight: 500; font-size: 15px; border: none; background: none;
+      text-align: left; cursor: pointer; width: 100%; font-family: 'Manrope', sans-serif;
+      transition: color .2s;
+    }
+    .mobile-nav a:hover, .mobile-nav button:hover { color: var(--text); }
+ 
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: url('./hero-bg.jpg') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(11,15,26,.88) 40%, rgba(11,15,26,.55) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px;
+      max-width: 680px; margin: 0 auto 0 max(24px, calc(50vw - 600px + 24px));
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 100px; padding: 6px 14px;
+      color: var(--muted); font-size: 13px; font-weight: 500; margin-bottom: 28px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 8vw, 88px);
+      line-height: 1; letter-spacing: .01em;
+      color: var(--text); margin-bottom: 8px;
+      animation: fadeUp .6s .1s ease both;
+    }
+    h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: clamp(17px, 2.2vw, 20px); color: var(--muted);
+      margin: 20px 0 36px; max-width: 520px; line-height: 1.65;
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero-cta {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .btn-hero {
+      background: var(--accent); color: #fff; border: none; border-radius: 10px;
+      padding: 14px 30px; font-family: 'Manrope', sans-serif; font-weight: 700;
+      font-size: 15px; cursor: pointer; transition: background .2s, transform .1s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-hero:hover { background: var(--accent2); }
+    .btn-hero-ghost {
+      background: rgba(255,255,255,.07); color: var(--text); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 30px; font-family: 'Manrope', sans-serif;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: background .2s; text-decoration: none; display: inline-block;
+    }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,.12); }
+ 
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .scroll-cue span { width: 1px; height: 48px; background: linear-gradient(to bottom, transparent, var(--dim)); }
+ 
+    /* ── SECTIONS ── */
+    section { padding: 100px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+ 
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: ''; display: block; width: 24px; height: 2px; background: var(--accent);
+    }
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1; letter-spacing: .01em; margin-bottom: 16px;
+    }
+    .section-desc { color: var(--muted); font-size: 17px; max-width: 560px; line-height: 1.65; }
+ 
+    /* ── SERVICES ── */
+    #services { background: var(--surface); }
+    .services-head { margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .svc-card {
+      background: var(--bg); padding: 40px 36px;
+      position: relative; overflow: hidden;
+      transition: background .25s;
+    }
+    .svc-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 0; background: var(--accent);
+      transition: height .35s ease;
+    }
+    .svc-card:hover { background: var(--surface2); }
+    .svc-card:hover::before { height: 100%; }
+    .svc-icon {
+      width: 52px; height: 52px;
+      background: rgba(232,93,4,.12); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .svc-icon svg { width: 26px; height: 26px; color: var(--accent); }
+    .svc-card h3 {
+      font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 700;
+      margin-bottom: 20px; color: var(--text);
+    }
+    .svc-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .svc-list li {
+      color: var(--muted); font-size: 14px; padding-left: 18px; position: relative;
+    }
+    .svc-list li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
+    }
+    .svc-price {
+      display: inline-block; margin-top: 20px;
+      background: rgba(232,93,4,.1); border: 1px solid rgba(232,93,4,.25);
+      border-radius: 6px; padding: 5px 12px;
+      color: var(--accent); font-size: 13px; font-weight: 600;
+    }
+ 
+    /* ── WHY ── */
+    #about { background: var(--bg); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .why-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .why-card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(232,93,4,.1); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 14px;
+    }
+    .why-card-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .why-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .why-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+ 
+    .stats-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 1px;
+      overflow: hidden;
+    }
+    .stat-item {
+      padding: 28px; text-align: center;
+      background: var(--surface2);
+    }
+    .stat-item:nth-child(1) { border-radius: 16px 0 0 0; }
+    .stat-item:nth-child(2) { border-radius: 0 16px 0 0; }
+    .stat-item:nth-child(3) { border-radius: 0 0 0 16px; }
+    .stat-item:nth-child(4) { border-radius: 0 0 16px 0; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 48px;
+      color: var(--accent); line-height: 1;
+    }
+    .stat-label { color: var(--dim); font-size: 13px; margin-top: 6px; }
+ 
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, #1a1200 0%, #2a1800 50%, #0b0f1a 100%);
+      border-top: 1px solid rgba(232,93,4,.2);
+      border-bottom: 1px solid rgba(232,93,4,.2);
+      padding: 80px 0; text-align: center;
+    }
+    .cta-band h2 { margin-bottom: 16px; }
+    .cta-band p { color: var(--muted); font-size: 17px; max-width: 500px; margin: 0 auto 36px; }
+    .cta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+ 
+    /* ── CONTACTS ── */
+    #contacts { background: var(--surface); }
+    .contacts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 860px; margin: 60px auto 0; }
+    .contact-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px 24px; text-align: center;
+      text-decoration: none; color: var(--text);
+      transition: border-color .25s, transform .25s;
+      cursor: pointer; display: block;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .contact-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(232,93,4,.1); display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 20px;
+    }
+    .contact-icon svg { width: 28px; height: 28px; color: var(--accent); }
+    .contact-card h4 { font-size: 14px; color: var(--muted); font-weight: 500; margin-bottom: 8px; }
+    .contact-card span { font-size: 16px; font-weight: 600; }
+ 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: var(--dim); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-links a:hover { color: var(--muted); }
+    .footer-copy { color: var(--dim); font-size: 13px; }
+ 
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,.7); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px; width: 100%; max-width: 440px;
+      position: relative; animation: popIn .25s ease both;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; color: var(--dim); cursor: pointer;
+      width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; transition: background .2s, color .2s;
+    }
+    .modal-close:hover { background: var(--surface2); color: var(--text); }
+    .modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin-bottom: 6px; }
+    .modal p { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+ 
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+    .form-group input, .form-group textarea {
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px; color: var(--text);
+      font-family: 'Manrope', sans-serif; font-size: 15px;
+      transition: border-color .2s; resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--dim); }
+    .form-submit {
+      width: 100%; background: var(--accent); color: #fff; border: none;
+      border-radius: 10px; padding: 14px; font-family: 'Manrope', sans-serif;
+      font-weight: 700; font-size: 15px; cursor: pointer;
+      transition: background .2s; margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--accent2); }
+    .form-submit:disabled { opacity: .6; cursor: not-allowed; }
+    .form-note { color: var(--dim); font-size: 12px; text-align: center; margin-top: 12px; }
+ 
+    /* success */
+    .success-state { display: none; text-align: center; padding: 20px 0; }
+    .success-state.show { display: block; }
+    .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(232,93,4,.12); display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 20px;
+    }
+    .success-icon svg { width: 32px; height: 32px; color: var(--accent); }
+    .success-state h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .success-state p { color: var(--muted); font-size: 14px; }
+ 
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.94); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+ 
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav, .hdr-contact { display: none; }
+      .burger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-card::before { width: 100%; height: 3px; top: 0; left: 0; }
+      .svc-card:hover::before { width: 100%; height: 3px; }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contacts-grid { grid-template-columns: 1fr; max-width: 380px; }
+    }
+    @media (max-width: 640px) {
+      .why-cards { grid-template-columns: 1fr; }
+      .stats-block { grid-template-columns: 1fr 1fr; }
+      h1 { font-size: 52px; }
+    }
+  </style>
+</head>
+<body>
+ 
+<!-- ── HEADER ── -->
+<header id="header">
+  <div class="hdr">
+    <div class="logo">
+      <img src="./logo.png" alt="Alfa Business Group" />
+    </div>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="hdr-contact">
+      <a href="tel:+74993023010" class="hdr-phone">+7 (499) 302-30-10</a>
+      <button class="btn-primary" onclick="openModal()">Обратная связь</button>
+    </div>
+    <div class="burger" onclick="toggleMenu()" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services" onclick="closeMenu()">Услуги</a>
+    <a href="#about" onclick="closeMenu()">О нас</a>
+    <a href="#contacts" onclick="closeMenu()">Контакты</a>
+    <a href="tel:+74993023010">+7 (499) 302-30-10</a>
+    <button onclick="openModal();closeMenu()">Оставить заявку</button>
+  </div>
+</header>
+ 
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/></svg>
+      Международные перевозки и таможенное оформление
+    </div>
+    <h1>Везём грузы.<br><span>Оформляем</span><br>таможню.</h1>
+    <p class="hero-sub">Импорт из Китая, ЮВА и Европы под ключ. Растаможим, доставим, сэкономим на пошлинах.</p>
+    <div class="hero-cta">
+      <button class="btn-hero" onclick="openModal()">
+        Узнать стоимость
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="#services" class="btn-hero-ghost">Наши услуги</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span></div>
+</section>
+ 
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <div class="services-head">
+      <div class="section-label">Что мы делаем</div>
+      <h2>Наши услуги</h2>
+      <p class="section-desc">Полный цикл — от поиска поставщика до доставки на ваш склад.</p>
+    </div>
+    <div class="services-grid">
+ 
+      <!-- Таможня -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3>Таможенные услуги</h3>
+        <ul class="svc-list">
+          <li>Услуги брокера</li>
+          <li>Подбор и проверка кода ТН ВЭД</li>
+          <li>Помощь с возвратом КТС</li>
+          <li>Маркировка «Честный знак»</li>
+          <li>Временный ввоз</li>
+        </ul>
+        <span class="svc-price">от 15 000 руб.</span>
+      </div>
+ 
+      <!-- Китай / ЮВА -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/></svg>
+        </div>
+        <h3>Китай и страны ЮВА</h3>
+        <ul class="svc-list">
+          <li>Вывоз брендовых товаров</li>
+          <li>Открытие экспортных деклараций</li>
+          <li>Подбор юрисдикции получателя</li>
+          <li>Склады в Китае, Турции, Дубае</li>
+        </ul>
+      </div>
+ 
+      <!-- Европа -->
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+        </div>
+        <h3>Европа</h3>
+        <ul class="svc-list">
+          <li>Поиск необходимой продукции</li>
+          <li>Безопасный вывоз специфичной номенклатуры</li>
+          <li>Быстрая оплата товара</li>
+        </ul>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">О компании</div>
+        <h2>Почему выбирают нас</h2>
+        <p class="section-desc">Специализируемся на сложных задачах: нестандартные грузы, специфичная номенклатура, жёсткие сроки.</p>
+        <div class="why-cards">
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h4>Надёжность</h4>
+            <p>Сохранность груза и соблюдение сроков гарантированы.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/></svg>
+            </div>
+            <h4>Глобальная сеть</h4>
+            <p>Склады и партнёры в ключевых точках мира.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h4>Опыт</h4>
+            <p>Работаем с любыми типами грузов и направлениями.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21.801 10A10 10 0 1 1 17 3.335"/></svg>
+            </div>
+            <h4>Прозрачность</h4>
+            <p>Честные цены без скрытых платежей.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="stats-block">
+          <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">лет опыта</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">клиентов</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">стран</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">поддержка</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── CTA BAND ── -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Готовы обсудить ваш груз?</h2>
+    <p>Рассчитаем стоимость и ответим в течение 24 часов. Без обязательств.</p>
+    <div class="cta-row">
+      <button class="btn-hero" onclick="openModal()">
+        Оставить заявку
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="tel:+74993023010" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);color:#f1f5f9;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 28px;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        Позвонить
+      </a>
+    </div>
+  </div>
+</div>
+ 
+<!-- ── CONTACTS ── -->
+<section id="contacts">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">Свяжитесь с нами</div>
+      <h2>Контакты</h2>
+      <p class="section-desc" style="margin:0 auto;">Выберите удобный способ связи</p>
+    </div>
+    <div class="contacts-grid">
+      <a href="tel:+74993023010" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        </div>
+        <h4>Телефон</h4>
+        <span>+7 (499) 302-30-10</span>
+      </a>
+      <a href="mailto:go@alfabg.org" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        </div>
+        <h4>Email</h4>
+        <span>go@alfabg.org</span>
+      </a>
+      <button class="contact-card" onclick="openModal()">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <h4>Форма</h4>
+        <span>Оставить заявку</span>
+      </button>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <img src="./logo.png" alt="Alfa Business Group" style="height:36px;" />
+    <div class="footer-links">
+      <a href="tel:+74993023010">+7 (499) 302-30-10</a>
+      <a href="mailto:go@alfabg.org">go@alfabg.org</a>
+    </div>
+    <p class="footer-copy">© 2026 Альфа Бизнес Групп</p>
+  </div>
+</footer>
+ 
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+ 
+    <div id="formState">
+      <h3>Оставить заявку</h3>
+      <p>Заполните форму — ответим в течение дня.</p>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>Ваше имя *</label>
+          <input type="text" id="fname" placeholder="Иван Петров" required />
+        </div>
+        <div class="form-group">
+          <label>Телефон *</label>
+          <input type="tel" id="fphone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+        <div class="form-group">
+          <label>Сообщение</label>
+          <textarea id="fmessage" rows="3" placeholder="Кратко о вашем грузе или задаче…"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">Отправить заявку</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+      </form>
+    </div>
+ 
+    <div class="success-state" id="successState">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21.801 10A10 10 0 1 1 17 3.335"/></svg>
+      </div>
+      <h4>Заявка отправлена!</h4>
+      <p>Маргарита свяжется с вами в ближайшее время.</p>
+    </div>
+  </div>
+</div>
+ 
+<script>
+  // ── HEADER SCROLL ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+  });
+ 
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+ 
+  // ── MODAL ──
+  function openModal() {
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === e.currentTarget) closeModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+ 
+  // ── FORM SUBMIT → TELEGRAM ──
+  async function submitForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Отправляем…';
+ 
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+ 
+    const text =
+      `🆕 Новая заявка с сайта alfabg\n\n` +
+      `👤 Имя: ${name}\n` +
+      `📞 Телефон: ${phone}\n` +
+      `💬 Сообщение: ${message || '—'}\n\n` +
+      `🕐 ${new Date().toLocaleString('ru-RU')}`;
+ 
+    const TOKEN   = '7868700735:AAGXK9UvBJQP8TmyRkFBPUbnduvmGCufFMw';
+    const CHAT_ID = '37236617';
+ 
+    try {
+      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
+      });
+    } catch (_) { /* отправляем в любом случае */ }
+ 
+    // Яндекс.Метрика — цель
+    if (typeof ym !== 'undefined') ym(108380116, 'reachGoal', 'form_submit');
+ 
+    document.getElementById('formState').style.display = 'none';
+    document.getElementById('successState').classList.add('show');
+ 
+    // сброс через 4 сек
+    setTimeout(() => {
+      closeModal();
+      setTimeout(() => {
+        document.getElementById('formState').style.display = '';
+        document.getElementById('successState').classList.remove('show');
+        document.getElementById('contactForm').reset();
+        btn.disabled = false;
+        btn.textContent = 'Отправить заявку';
+      }, 400);
+    }, 4000);
+  }
+ 
+  // ── UTM в заголовок Метрики ──
+  const utmSource = new URLSearchParams(window.location.search).get('utm_source');
+  if (utmSource && typeof ym !== 'undefined') ym(108380116, 'params', { utm_source: utmSource });
+</script>
+</body>
 </html>
+ 
